@@ -1,0 +1,1 @@
+webpackJsonp([32],{g5Tu:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n={render:function(){var e=this.$createElement;return(this._self._c||e)("iframe",{attrs:{src:"http://119.29.85.28",frameborder:"0",width:"100%",height:"830vh"}})},staticRenderFns:[]},l=r("VU/8")(null,n,!1,null,null,null);t.default=l.exports}});

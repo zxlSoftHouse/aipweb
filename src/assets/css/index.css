@@ -1,0 +1,571 @@
+:root{
+    --bg-color      : #001D53d1;
+    --title-bg-color: #032F68d1;
+}
+html,body{
+    height  : 100%;
+    margin  : 0;
+    overflow: hidden;
+}
+.main{
+    height          : 100%;
+    display         : flex;
+    flex-wrap       : wrap;
+    background-image: url('../imgs/bg.png')
+}
+/* 隐藏百度地图logo */
+.anchorBL{
+    display: none;
+}
+/* 加载动画 */
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+@-webkit-keyframes fade-in {/*针对webkit内核*/  
+    0% {opacity: 0;}  
+    40% {opacity: 0;}  
+    100% {opacity: 1;}  
+}  
+div {    
+    animation         : fade-in;     /*动画名称*/
+    animation-duration: 2s;          /*动画持续时间*/
+    -webkit-animation : fade-in 2s;  /*针对webkit内核*/
+} 
+/* 顶部布局开始 */
+#header{
+    height   : 12%;
+    display  : flex;
+    width    : 100%;
+    flex-wrap: wrap;
+    color    : #ffffff;
+}
+
+.title{
+    display        : flex;
+    width          : 100%;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 50%;
+}
+.left-logo{
+    height: 100%;
+}
+.center-title{
+    height: 100%;
+}
+.center-title img{
+    height: 100%;
+}
+.right-setting{
+    height: 100%;
+}
+
+.index-nav-frame-line{
+    float      : left;
+    position   : relative;
+    display    : block;
+    outline    : none;
+    width      : 100px;
+    line-height: 50px;
+    font-size  : 18px;
+}
+.index-nav-frame-line-title span{
+    cursor: pointer;
+}
+.index-nav-frame-line-center{
+	opacity           : 0;
+	height            : 0;
+	position          : absolute;
+	overflow          : hidden;
+	width             : 90%;
+	transition        : all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition   : all 0.5s;
+	/* Firefox 4 */
+	-o-transition: all 0.5s;
+    /* Opera */
+}
+.index-nav-frame-line-center a{
+    display        : inline-block;
+    width          : 100%;
+    text-decoration: none;
+    color          : #eeeeee;
+    cursor         : pointer;
+}
+.index-nav-frame-line-center a:hover{
+    text-decoration: none;
+    /* color          : #eeeeee; */
+}
+.index-nav-frame-line-li{
+	width     : 100%;
+	background: #091745;
+	color     : #ffffff;
+	padding   : 0 15px;
+	font-size : 14px;
+}
+.index-nav-frame-line-center:hover{
+	color: white;
+}
+.index-nav-frame-line-li:hover{
+	/* background: #444359; */
+	color     : white;
+}
+.index-nav-frame-line-li:hover a{
+	/* background: #444359; */
+	color     : white;
+}
+.index-nav-frame-line:hover .index-nav-frame-line-center{
+	height : auto;
+	opacity: 1;
+}
+/* 顶部布局结束 */
+
+/* 导航栏开始 */
+.nav{
+    width       : 100%;
+    padding-left: 30px;
+    /* color           : #2291CD; */
+    background-color: #01649a47;
+    height          : 40%;
+    display         : flex;
+    align-items     : center;
+}
+.nav div:hover{
+    color : #e0d811;
+    cursor: pointer;
+}
+.nav span{
+    margin-right: 10px;
+    font-size   : 20px;
+}
+@media screen and (max-width: 1500px){
+    .nav span{
+        font-size: 14px;
+    }
+}
+/* 导航栏结束 */
+
+/* 主题布局开始 */
+.body-content{
+    height : 88%;
+    display: flex;
+    width  : 100%;
+    color  : #ffffff;
+}
+.div-title{
+    width           : 100%;
+    height          : 30px;
+    background-color: var(--title-bg-color);
+    padding-left    : 10px;
+    line-height     : 30px;
+}
+
+/* 左侧主体开始 */
+.left-div{
+    width    : 25%;
+    height   : 100%;
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+/* 天气开始 */
+.weather{
+    width           : 100%;
+    display         : flex;
+    height          : 23%;
+    background-color: var(--bg-color);
+    margin          : 2px;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+.weather-left{
+    display  : flex;
+    width    : 35%;
+    flex-wrap: wrap;
+}
+.location{
+    width      : 100%;
+    height     : 30%;
+    padding-top: 20px;
+    text-align : center;
+}
+.location span{
+    font-size: 30px;
+}
+.location :first-child{
+    color: #5AB1EF;
+}
+.date{
+    width          : 100%;
+    height         : 60%;
+    display        : flex;
+    color          : #5AB1EF;
+    flex-wrap      : wrap;
+    justify-content: space-around;
+    margin-left    : 25px;
+}
+.date-left{
+    width: 50%;
+}
+.week{
+    font-size: 21px;
+}
+.day{
+    font-size: 50px;
+}
+.date-right{
+    width      : 40%;
+    font-size  : 23px;
+    padding-top: 52px;
+}
+.weather-right{
+    display        : flex;
+    justify-content: space-around;
+    width          : 65%;
+}
+.oneday-weather{
+    text-align : center;
+    padding-top: 25px;
+}
+.oneday-weather span{
+    font-size: 60px;
+}
+@media screen and (max-width: 1500px){
+    .location span{
+        font-size: 20px;
+    }
+    .date{
+        margin-left: 25px;
+    }
+    .week{
+        font-size: 13px;
+    }
+    .day{
+        font-size: 33px;
+    }
+    .date-right{
+        font-size  : 17px;
+        padding-top: 32px;
+    }
+    .oneday-weather span{
+        font-size: 25px;
+    }
+    .oneday-weather p{
+        font-size: 12px;
+    }    
+}
+/* 天气结束 */
+
+/* 设备统计开始 */
+.equipment-statistics{
+    width           : 100%;
+    display         : flex;
+    height          : 49%;
+    flex-wrap       : wrap;
+    background-color: var(--bg-color);
+    margin          : 2px;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+.equipment-statistics-data{
+    display        : flex;
+    width          : 100%;
+    justify-content: space-around;
+}
+.equipment-attr-line{
+    display        : flex;
+    flex-wrap      : wrap;
+    width          : 100%;
+    justify-content: space-around;
+}
+.equipment-attr{
+    text-align: center;
+}
+.equipment-attr :first-child{
+    color: #5AB1EF;
+}
+.equipment-attr span{
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1500px){
+    .equipment-attr span{
+        font-size: 20px;
+    }
+    .equipment-attr p{
+        font-size: 12px;
+    }
+}
+/* 设备统计结束 */
+
+/* 告警分析开始 */
+.alarm-analysis{
+    width           : 100%;
+    height          : 49%;
+    background-color: var(--bg-color);
+    margin          : 2px;
+    display         : flex;
+    flex-wrap       : wrap;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+.alarm-analysis-data{
+    width          : 100%;
+    height         : 10%;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+}
+.alarm-analysis-data-detail{
+    width: 30%;
+}
+.alarm-analysis-data-detail :last-child{
+    color: #5AB1EF;
+}
+/* 告警分析结束 */
+/* 左侧主体结束 */
+
+/* 右侧主体开始 */
+.right-div{
+    width    : 75%;
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+/* 右侧主体上部分开始 */
+.right-top-div{
+    width  : 100%;
+    display: flex;
+    height : 64%;
+}
+
+/* 上部分左侧地图开始 */
+.map{
+    width: 70%;
+}
+/* 上部分左侧地图结束 */
+
+/* 上部分右侧开始 */
+.right-top-right-div{
+    width: 30%;
+}
+
+/* 统计数据开始 */
+.statistical-data{
+    width           : 99%;
+    height          : 33%;
+    margin          : 2px;
+    background-color: var(--bg-color);
+    flex-wrap       : wrap;
+    display         : flex;
+    text-align      : center;
+    justify-content : space-around;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+.statistical-data-content{
+    width      : 40%;
+    height     : 30%;
+    padding-top: 19px;
+}
+.date-cell{
+    width     : 100%;
+    border    : 1px solid #226EA7;
+    height    : 100%;
+    border    : 1px transparent;
+    box-shadow: 0 0 4px #5AB1EF;
+}
+.data-num{
+    font-size: 20px;
+    color    : #5AB1EF;
+}
+.date-cell p{
+    margin: 0;
+}
+@media screen and (max-width: 1500px){
+    .statistical-data{
+        height: 30%;
+    }
+    .statistical-data-content{
+        height     : 35%;
+        padding-top: 9px;
+    }
+    .data-num{
+        font-size: 16px;
+    }
+    .date-cell p{
+        font-size: 10px;
+    }
+}
+/* 统计数据结束 */
+
+/* 路灯信息开始 */
+.lamp-info{
+    width           : 99%;
+    height          : 66%;
+    margin          : 2px;
+    background-color: var(--bg-color);
+    flex-wrap       : wrap;
+    display         : flex;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+.info-table{
+    height: 90%;
+    width : 100%
+}
+.table-top{
+    display        : flex;
+    justify-content: space-evenly;
+    align-items    : center;
+    height         : 22%;
+    border-bottom  : #5AB1EF 1px solid;
+}
+.table-top :last-child{
+    border: none;
+}
+.table-cell-top{
+    display        : flex;
+    height         : 100%;
+    align-items    : center;
+    border-right   : #5AB1EF 1px solid;
+    width          : 100%;
+    justify-content: space-evenly;
+}
+.table-cell-middle{
+    display        : flex;
+    align-items    : center;
+    justify-content: space-around;
+    text-align     : center;
+    height         : 56%;
+    border-bottom  : #5AB1EF 1px solid;
+}
+.table-cell-middle-left{
+    height         : 50%;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-around;
+    text-align     : center;
+    flex-wrap      : wrap;
+}
+.month-consumption-chart{
+    height         : 100%;
+    display        : flex;
+    justify-content: space-around;
+    text-align     : center;
+    flex-wrap      : wrap;
+    padding-top    : 12%;
+}
+.table-buttom{
+    display        : flex;
+    justify-content: space-evenly;
+    height         : 22%;
+    align-items    : center;
+    text-align     : center;
+}
+.table-cell-buttom{
+    display        : flex;
+    height         : 100%;
+    align-items    : center;
+    border-right   : #5AB1EF 1px solid;
+    width          : 100%;
+    justify-content: space-evenly;
+}
+.table-buttom :last-child{
+    border: none;
+}
+.table-cell span{
+    display: block;
+}
+.cell-num{
+    color: #5AB1EF;
+}
+.cell-num-L{
+    font-size: 20px;
+    color    : #5AB1EF;
+}
+@media screen and (max-width: 1500px){
+    .lamp-info{
+        height: 70%;
+    }
+    .info-table span{
+        font-size: 15px;
+    }
+}
+/* 路灯信息结束 */
+
+/* 能耗分析开始 */
+.energy-consumption-analysis{
+    display         : flex;
+    width           : 99%;
+    height          : 33%;
+    flex-wrap       : wrap;
+    margin          : 2px;
+    background-color: var(--bg-color);
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+.consumption-analysis-data{
+    width  : 100%;
+    height : 60%;
+    display: flex;
+}
+.month-consumption{
+    width      : 30%;
+    text-align : center;
+    line-height: 45px;
+}
+.month-consumption-chart{
+    width  : 70%;
+    display: flex;
+}
+.consumption-chart{
+    width     : 50%;
+    height    : 85px;
+    text-align: center;
+}
+@media screen and (max-width: 1500px){
+    .energy-consumption-analysis{
+        height: 36%;
+    }
+    .month-consumption p{
+        margin: 0;
+    }
+    .consumption-chart{
+        height: 55px;
+    }
+}
+/* 能耗分析结束 */
+/* 上部分右侧结束 */
+
+/* 右侧主体下部分开始 */
+.right-buttom-div{
+    display: flex;
+    width  : 100%;
+    height : 35%;
+}
+/* 月度能耗开始 */
+.monthly-consumption{
+    background-color: var(--bg-color);
+    width           : 60%;
+    margin          : 2px;
+    flex-wrap       : wrap;
+    display         : flex;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+/* 月度能耗结束 */
+
+/* 年度能耗开始 */
+.annual-consumption{
+    background-color: var(--bg-color);
+    width           : 40%;
+    margin          : 2px;
+    flex-wrap       : wrap;
+    display         : flex;
+    border          : 1px transparent;
+    box-shadow      : 0 0 8px #5AB1EF;
+}
+/* 年度能耗结束 */

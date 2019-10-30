@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title>智慧城市照明系统</title>
+    <script src="/static/jquery-1.7.1.min.js"></script>
+    <script src="/static/qiniu.js"></script>
+    <script src="https://cdn.staticfile.org/plupload/2.1.9/plupload.full.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=uwpPNkPSi7aX8aBwGqF6d6RcGCksZrTG"></script>
+    <!-- <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script> -->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js" charset="UTF-8"></script>
+    <script src="http://ditu.google.cn/maps/api/js?&key=AIzaSyAdKxtc9W2mZ-I2NLABHrsElAxRuShgg1Q"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <!-- <script src="http://openlayers.org/en/v3.4.0/build/ol.js" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1028926_r41zplf8hff.css">
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css">
+    <!-- <link rel="stylesheet" href="http://openlayers.org/en/v3.4.0/css/ol.css" type="text/css"> -->
+  </head>
+  <body onbeforeunload="">
+    <div id="app">
+      <div class="init-box">
+        <style type="text/css">
+          .svg-icon{
+            width: 40px;
+            height: 40px;
+            stroke: #343640;
+            stroke-width: 2;
+            stroke-linecap: round;
+          }
+          .svg-icon .path{
+            fill: none;
+          }
+          .m-wipe{
+            background: none;
+            animation: loading-rotate 2s linear infinite;
+          }
+          .m-wipe .path{
+            background: none;
+            stroke-dasharray: 90,150;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            stroke-width: 2px;
+            stroke: #20a0ff;
+            stroke-linecap: round;
+            animation: loading-wipe 1.5s ease-in-out infinite;
+          }
+          .m-loading{
+            background: none;
+            animation: loading-rotate 0.8s linear infinite;
+          }
+          @keyframes loading-rotate{
+            to{transform:rotate(1turn)}
+          }
+          @keyframes loading-wipe{
+            0%{
+              stroke-dasharray:1,200;
+              stroke-dashoffset:0;
+            }
+            50%{
+              stroke-dasharray:90,150;
+              stroke-dashoffset:-40px;
+            }
+            to{
+              stroke-dasharray:90,150;
+              stroke-dashoffset:-120px;
+            }
+          }
+          .init-box{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+          .init-box .init-loading{
+            width: 128px;
+            height: 128px;
+          }
+          .init-box .init-tips{
+            color: #8B90A0;
+          }
+        </style>
+        <div>
+          <svg viewBox="0 0 50 50" class="svg-icon m-loading init-loading">
+            <circle cx="25" cy="25" r="20" fill="none" stroke="#F2F2F2" class="path"></circle>
+            <circle cx="25" cy="25" r="20" fill="none" stroke="#24A2FF" stroke-dasharray="60,150" class="path"></circle>
+          </svg>
+        </div>
+        
+        <p class="init-tips">初次加载，请耐心等待...</p>
+
+        
+    
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script  charset="utf-8" src="/static/event.js"></script>
+  <script src="/static/webVideoCtrl.js"></script>
+  <script LANGUAGE="javascript" src="/static/pubSub.js"></script>
+  <!-- <script ID="clientEventHandlersJS" LANGUAGE="javascript" src="/static/alarmCtrl.js"></script> -->
+  <!-- <script src="/static/jquery-PlayBar.min.js"></script> -->
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventReady">
+    EventReady();
+  </SCRIPT>
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventLoginServer(bSuccess)">
+    EventLoginServer(bSuccess);
+  </SCRIPT>
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventALCOperator(lOpType, lALCHandle, strName, ulState)">
+    EventALCOperator(lOpType, lALCHandle, strName, ulState);
+  </SCRIPT>
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventCLIOperator(lOpType, lUserHandle, strName, ulState)">
+    EventCLIOperator(lOpType, lUserHandle, strName, ulState)
+  </SCRIPT>
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventGroupOperator(lOpType,  ulGroupID,  ulParentGroupID,  ulGroupType,  strName)">
+    EventGroupOperator(lOpType,  ulGroupID,  ulParentGroupID,  ulGroupType,  strName)
+  </SCRIPT>
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventCameraOperator(lOpType, ulCameraID, ulParentGroupID, ulCameraType, strName, ulState)">
+    EventCameraOperator(lOpType, ulCameraID, ulParentGroupID, ulCameraType, strName, ulState)
+  </SCRIPT>
+  <SCRIPT LANGUAGE="javascript" FOR="VSPOcxClient" EVENT="EventCameraPlayRTState( ulCameraID,  ulState)">
+    EventCameraPlayRTState( ulCameraID,  ulState)
+  </SCRIPT>
+
+  <script>
+   
+/*    VSPOcxClient.attachEvent("EventReady",function(){
+      this.$alarm.EventReady();
+　　})
+ */
+
+ 
+  </script>
+</html>

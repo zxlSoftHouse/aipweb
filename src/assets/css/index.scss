@@ -1,0 +1,128 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './btn.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+div:focus{
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+//main-container全局样式
+.app-main{
+  // min-height: 100vh;
+}
+/* 隐藏百度地图logo */
+.anchorBL{
+  display: none;
+}
+.app-container {
+  padding: 20px 20px 50px;
+  background: #fff;
+  .title {
+    font-size: 16px;
+    padding: 0 20px 50px;
+    color: #4e4e4e;
+  }
+}
+
+.fr {
+  float: right;
+}
+.lf {
+  float: left;
+}
+.rel {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.clear {
+  clear: both;
+}
+.pagination-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.heading {
+  .search {
+    margin-bottom: 20px;
+    width: 200px;
+  }
+}
+
+.pd-10 {
+  padding: 10px;
+}
+.mg-10 {
+  margin: 10px 0;
+}
+
+// 省市区级联组件在表格中的样式
+table .el-input__suffix {
+  right: auto;
+  left: -100px;
+}
+
+table .el-input.is-disabled .el-input__inner {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+table .el-cascader.is-disabled .el-cascader__label {
+  color: #606266;
+  padding: 0;
+}
+
+.el-menu-item,
+.el-menu-item.is-active{
+  background-color: transparent !important;
+}

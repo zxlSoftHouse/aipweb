@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+/* TODO 初始化标签样式*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background: #f4f4f4;
+  height: 100%;
+}
+
+html,
+frameset,
+frame,
+ul,
+ul > li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+body,
+td,
+input,
+em {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  margin: 0;
+}
+
+del,
+ins,
+a,
+a:hover {
+  text-decoration: none;
+}
+
+input,
+textarea,
+button,
+select {
+  box-shadow: none;
+  outline: 0;
+  border: 1px solid #ddd;
+  padding: 7px 9px;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  word-break: break-all;
+}
+
+input[type=text] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.empty {
+  color: #666;
+  text-align: center;
+  height: 200px;
+  margin-top: 58px;
+  font-size: 20px;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.rel {
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+.lf {
+  float: left;
+}
+
+.rt {
+  float: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.bk {
+  display: block;
+}
+
+em {
+  font-style: normal;
+}
